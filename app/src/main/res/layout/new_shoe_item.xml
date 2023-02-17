@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="@string/shoeName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/ShoeNameField"
+            app:layout_constraintEnd_toStartOf="@+id/ShoeNameField"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ShoeNameField"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.name}"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="@string/company"
+            app:layout_constraintBaseline_toBaselineOf="@+id/companyField"
+            app:layout_constraintEnd_toStartOf="@+id/companyField"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/companyField"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.company}"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/ShoeNameField" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="@string/shoeSize"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoeSizeField"
+            app:layout_constraintEnd_toStartOf="@+id/shoeSizeField"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/shoeSizeField"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{(Double.toString(shoe.size))}"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/companyField" />
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="@string/description"
+            app:layout_constraintBaseline_toBaselineOf="@+id/descriptionField"
+            app:layout_constraintEnd_toStartOf="@+id/descriptionField"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/descriptionField"
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.description}"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSizeField" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
