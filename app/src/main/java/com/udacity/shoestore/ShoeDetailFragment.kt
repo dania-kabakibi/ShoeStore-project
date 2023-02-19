@@ -25,12 +25,12 @@ class ShoeDetailFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_shoe_detail, container, false)
         binding.lifecycleOwner = this
-        //viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+        binding.shoe = Shoe("", 0.0, "", "")
         binding.cancelButton.setOnClickListener { view:View ->
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
         binding.saveButton.setOnClickListener { view:View ->
-            viewModel.addNewShoe(binding.shoe)
+            viewModel.addNewShoe(binding.shoe!!)
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
         return binding.root
