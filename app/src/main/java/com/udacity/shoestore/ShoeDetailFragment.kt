@@ -23,15 +23,19 @@ class ShoeDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_shoe_detail, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
         binding.lifecycleOwner = this
-        binding.shoe = Shoe("", 0.0, "", "")
-        binding.cancelButton.setOnClickListener { view:View ->
-            Navigation.findNavController(view).navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
-        }
-        binding.saveButton.setOnClickListener { view:View ->
-            viewModel.addNewShoe(binding.shoe!!)
-            Navigation.findNavController(view).navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+        with(binding) {
+            shoe = Shoe("", 0.0, "", "")
+            cancelButton.setOnClickListener { view: View ->
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+            }
+            saveButton.setOnClickListener { view: View ->
+                viewModel.addNewShoe(binding.shoe!!)
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+            }
         }
         return binding.root
     }
