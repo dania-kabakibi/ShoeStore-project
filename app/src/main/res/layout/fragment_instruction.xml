@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".InstructionFragment">
-
+    <!--Here I used ConstraintLayout because it is easier to organize views,
+    and I can place them anywhere-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,7 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/big_margin"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="@dimen/big_top_margin"
             android:text="@string/instruction1"
             android:textColor="@color/design_default_color_primary_dark"
             app:layout_constraintBottom_toTopOf="@+id/instruction2_text"

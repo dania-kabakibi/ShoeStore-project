@@ -10,7 +10,9 @@
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
     </data>
-
+    <!--Here I used ConstraintLayout because it is easier to organize views horizontally
+    by using baseline and create chains. But if I want to do this layout by using LinearLayout,
+    I must use 5 LinearLayouts and it will be nested layout-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

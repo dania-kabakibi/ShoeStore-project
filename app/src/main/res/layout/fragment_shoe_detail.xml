@@ -12,7 +12,9 @@
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
     </data>
-
+    <!--I used constraintLayout because the UI is a complex.
+    If I want to do this layout by using LinearLayout,
+    I must use 6 LinearLayouts and the result will be a nested layout-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
